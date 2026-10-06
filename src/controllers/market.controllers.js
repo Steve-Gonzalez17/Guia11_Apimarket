@@ -290,17 +290,18 @@ export const postProductos_version_001 = async (req, res) => {
 
 
 // Actualizar producto
+// Actualizar producto
 export const putProductos = async (req, res) => {
   try {
     const { id } = req.params;
 
     const {
-      name,
-      description,
-      price_cost,
-      price_sale,
-      quantity,
-      image
+      nombre,
+      descripcion,
+      precio_costo,
+      precio_venta,
+      cantidad,
+      fotografia
     } = req.body;
 
     const result = await pool.query(
@@ -313,12 +314,12 @@ export const putProductos = async (req, res) => {
            fotografia = $6
        WHERE id = $7`,
       [
-        name,
-        description,
-        price_cost,
-        price_sale,
-        quantity,
-        image,
+        nombre,
+        descripcion,
+        precio_costo,
+        precio_venta,
+        cantidad,
+        fotografia,
         id
       ]
     );
