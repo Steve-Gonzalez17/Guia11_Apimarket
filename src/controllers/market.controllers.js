@@ -186,13 +186,11 @@ export const getProductosId = async (req, res) => {
 
     if (result.rows.length === 0) {
       return res.status(404).json({
-        message: 'No hay productos registrados'
+        message: 'Producto no encontrado'
       });
     }
 
-    res.json({
-      productos: result.rows
-    });
+    res.json(result.rows[0]);
 
   } catch (error) {
     console.error('ERROR EN getProductosId:', error);
