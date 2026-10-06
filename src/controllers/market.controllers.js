@@ -161,9 +161,7 @@ export const getProductos = async (req, res) => {
       });
     }
 
-    res.json({
-      productos: result.rows
-    });
+    res.json(result.rows);
 
   } catch (error) {
     console.error('ERROR EN getProductos:', error);
